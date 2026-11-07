@@ -4,10 +4,22 @@
   "description": "A self-hosted to-do board for working alongside AI agents",
   "license": "MIT",
   "type": "module",
-  "engines": { "node": ">=24" },
+  "engines": {
+    "node": ">=24"
+  },
   "scripts": {
     "start": "node server.mjs",
     "test": "node --test test/*.test.mjs",
-    "test:browser": "node dev/test-board.mjs && node dev/test-heroes.mjs && node dev/test-demo.mjs && node dev/test-canvas-sync.mjs"
+    "test:browser": "node dev/test-board.mjs && node dev/test-heroes.mjs && node dev/test-demo.mjs && node dev/test-canvas-sync.mjs",
+    "dev:cf": "wrangler dev",
+    "deploy:cf": "wrangler deploy",
+    "db:local": "wrangler d1 migrations apply todo --local",
+    "db:remote": "wrangler d1 migrations apply todo --remote",
+    "test:cf": "node --test cloudflare/test/*.test.mjs"
+  },
+  "devDependencies": {
+    "esbuild": "0.28.2",
+    "miniflare": "5.20261104.0-beta",
+    "wrangler": "4.158.0"
   }
 }
