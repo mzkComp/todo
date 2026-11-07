@@ -13,7 +13,7 @@
     "binding": "DB",
     "database_name": "todo",
     // Replace with the id returned by: npx wrangler d1 create todo
-    "database_id": "00000000-0000-0000-0000-000000000000",
+    "database_id": "20d1b724-51a2-4837-be88-8fe8265871fa",
     "migrations_dir": "cloudflare/migrations"
   }],
   "triggers": { "crons": ["0 */3 * * *"] }
